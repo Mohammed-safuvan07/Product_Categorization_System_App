@@ -11,7 +11,9 @@ import os
 st.title('Product Category Prediction App ')
 
 # Dataset Loading
-csv_path = os.path.join(os.getcwd(), "category_tree_.csv")
+BASE_DIR = os.path.dirname(__file__)  # <-- this is key
+csv_path = os.path.join(BASE_DIR, "category_tree_.csv")
+
 data = pd.read_csv(csv_path)
 unique_categories = data['category_path'].unique()
 
