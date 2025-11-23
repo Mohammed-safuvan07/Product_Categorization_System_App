@@ -6,12 +6,13 @@ import re
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-
+import os
 # Title
 st.title('Product Category Prediction App ')
 
 # Dataset Loading
-data = pd.read_csv('category_tree_.csv')
+csv_path = os.path.join(os.getcwd(), "category_tree_.csv")
+data = pd.read_csv(csv_path)
 unique_categories = data['category_path'].unique()
 
 # Hugging Face model
